@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskPro - Task Creation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="task-form-container">
+        <h1>Create a New Task</h1>
+        <form id="task-form">
+            <label for="task-name">Task Name:</label>
+            <input type="text" id="task-name" required>
+
+            <label for="task-priority">Priority:</label>
+            <select id="task-priority">
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+
+            <label for="task-category">Category:</label>
+            <input type="text" id="task-category">
+
+            <button type="submit">Create Task</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
