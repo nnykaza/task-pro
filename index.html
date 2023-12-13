@@ -1,33 +1,80 @@
+<!-- index.html -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TaskPro - Task Creation</title>
     <link rel="stylesheet" href="styles.css">
+    <title>TaskPro</title>
 </head>
 <body>
+    <header>
+        <h1>TaskPro</h1>
+        <nav>
+            <ul>
+                <li><a href="#task-form">Create Task</a></li>
+                <li><a href="#task-list">Task List</a></li>
+                <li><a href="#task-priority">Task Priority</a></li>
+                <li><a href="#task-status">Task Status</a></li>
+                <li><a href="#user-profile">User Profile</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <div class="task-form-container">
-        <h1>Create a New Task</h1>
-        <form id="task-form">
-            <label for="task-name">Task Name:</label>
-            <input type="text" id="task-name" required>
+    <main>
+        <section id="task-form">
+            <h2>Create/Edit Task</h2>
+            <form id="taskForm">
+                <label for="taskTitle">Task Title:</label>
+                <input type="text" id="taskTitle" required>
 
-            <label for="task-priority">Priority:</label>
-            <select id="task-priority">
-                <option value="low">Low</option>
-                <option value="medium">Medium</option>
-                <option value="high">High</option>
-            </select>
+                <label for="taskDescription">Task Description:</label>
+                <textarea id="taskDescription" required></textarea>
 
-            <label for="task-category">Category:</label>
-            <input type="text" id="task-category">
+                <label for="taskPriority">Task Priority:</label>
+                <select id="taskPriority" required>
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
 
-            <button type="submit">Create Task</button>
-        </form>
-    </div>
+                <label for="taskStatus">Task Status:</label>
+                <select id="taskStatus" required>
+                    <option value="todo">To-Do</option>
+                    <option value="inProgress">In Progress</option>
+                    <option value="completed">Completed</option>
+                </select>
 
-    <script src="script.js"></script>
+                <button type="submit">Save Task</button>
+            </form>
+        </section>
+
+        <section id="task-list">
+            <h2>Task List</h2>
+            <ul id="tasksList"></ul>
+        </section>
+
+        <section id="task-priority">
+            <h2>Task Priority</h2>
+            <!-- Priority visualization can be added here -->
+        </section>
+
+        <section id="task-status">
+            <h2>Task Status</h2>
+            <!-- Status visualization can be added here -->
+        </section>
+
+        <section id="user-profile">
+            <h2>User Profile</h2>
+            <div id="profileDetails"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 TaskPro</p>
+    </footer>
+
+    <script src="app.js"></script>
 </body>
 </html>
