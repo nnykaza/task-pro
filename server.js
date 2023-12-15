@@ -35,6 +35,18 @@ app.get('/dashboard', (req, res) => {
   }
 });
 
+app.post('/addTask', isAuthenticated, async (req, res) => {
+  const { task } = req.body;
+  try {
+    req.user.tasks.push({ text: task, status: 'todo' });
+    await req.user.save();
+    res.redirect('/dashboard');
+  } catch (err) {
+    console.log(err);
+    res.redirect('/dashboard');
+  }
+});
+
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
 });
