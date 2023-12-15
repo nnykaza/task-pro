@@ -111,7 +111,7 @@ footer {
     width: 100%;
 }
 
-/* Additional Styles for Collaborative Features */
+/* Add. Styles for Collaborative Features */
 
 #collaboratorsList {
     list-style: none;
@@ -127,14 +127,14 @@ footer {
     padding: 10px;
 }
 
-/* Additional Styles for Charts */
+/* Add. Styles for Charts */
 
 #priorityChart, #statusChart {
     height: 300px;
     margin-top: 15px;
 }
 
-/* Additional Styles for Reminders */
+/* Add. Styles for Reminders */
 
 #remindersList {
     padding-left: 0;
@@ -147,7 +147,7 @@ footer {
     padding: 10px;
 }
 
-/* Additional Styles for Calendar Integration */
+/* Add. Styles for Calendar Integration */
 
 #calendarContainer {
     margin-top: 15px;
