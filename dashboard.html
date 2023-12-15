@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Management Dashboard</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f8ff;
+    }
+
+    h1 {
+      color: #353536;
+    }
+
+    form {
+      margin-top: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 10px;
+      background-color: #49beb7;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #fff;
+      padding: 10px;
+      margin-bottom: 5px;
+      border-radius: 5px;
+    }
+
+    .status {
+      padding: 5px;
+      border-radius: 5px;
+    }
+
+    .status.todo {
+      background-color: #f8d0d0;
+      color: #c93c3c;
+    }
+
+    .status.in-progress {
+      background-color: #f0e68c;
+      color: #ad9900;
+    }
+
+    .status.completed {
+      background-color: #c0e57c;
+      color: #4b7730;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to the Dashboard, <%= username %></h1>
+  <form action="/addTask" method="post">
+    <label for="task">Add Task:</label>
+    <input type="text" id="task" name="task" required>
+    <button type="submit">Add Task</button>
+  </form>
+  <h2>Your Tasks:</h2>
+  <ul>
+    <% tasks.forEach(task => { %>
+      <li>
+        <%= task.text %>
+        <div class="status <%= task.status %>"><%= task.status %></div>
+      </li>
+    <% }); %>
+  </ul>
+</body>
+</html>
